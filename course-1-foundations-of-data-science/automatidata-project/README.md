@@ -79,7 +79,7 @@ A scatter plot of `trip_distance` vs `total_amount` reveals a notable pattern �
 | File | Description |
 |------|-------------|
 | `Activity_Course1_Automatidata_project_lab.ipynb` | Jupyter notebook — data loading, inspection, summary statistics, visualizations |
-| `Course1_PACE_strategy_document.docx` | PACE strategy document — reasoning and decisions at each project stage |
+| `PACE-strategy-document.docx` | PACE strategy document — reasoning and decisions at each project stage |
 | `exec_summary_final.pptx` | Executive summary — one-page professional summary with visual evidence for stakeholders |
 | `data_quality_log.md` | Structured log of all data quality issues identified, with reasoning and recommended actions |
 
