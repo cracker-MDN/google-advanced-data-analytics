@@ -101,8 +101,8 @@ The 2017 Yellow Taxi Trip Data used for this project contains **~408,000 trip re
 | File | Description |
 |---|---|
 | `Activity_Course4_Automatidata_project_lab.ipynb` | Full Jupyter notebook with cleaning, EDA, feature engineering, modelling, and evaluation |
-| `Course4_PACE_strategy_document.docx` | PACE strategy document covering all four project stages |
-| `course4_executive_summary.pptx` | One-page executive summary for TLC stakeholders |
+| `PACE-strategy-document.docx` | PACE strategy document covering all four project stages |
+| `exec_summary_final.pptx` | One-page executive summary for TLC stakeholders |
 | `README.md` | This file |
 
 ---
