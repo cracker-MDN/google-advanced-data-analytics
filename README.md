@@ -19,10 +19,10 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 | # | Course | Focus | Status |
 |---|---|---|---|
 | 1 | Foundations of Data Science | Business scoping, initial data exploration, PACE framework | ✅ Complete |
-| 2 | Get Started with Python | Python for data analysis (pandas, matplotlib), structured EDA | ✅ Complete |
+| 2 | Go Beyond the Numbers: Translate Data into Insights | Exploratory data analysis, outlier handling, visualization (pandas, matplotlib, Tableau) | ✅ Complete |
 | 3 | The Power of Statistics | Hypothesis testing, A/B testing, confidence intervals, Welch's t-test | ✅ Complete |
 | 4 | Regression Analysis | Multiple linear regression, feature engineering, model evaluation | ✅ Complete |
-| 5 | The Nuts and Bolts of Machine Learning | Classification, decision trees, random forests, XGBoost | ⏳ In progress |
+| 5 | The Nuts and Bolts of Machine Learning | Classification, decision trees, random forests, XGBoost | ✅ Complete |
 | 6 | Google Advanced Data Analytics Capstone | Capstone project | 🔒 Pending |
 | 7 | The Google Advanced Data Analytics Capstone | Final capstone deliverables | 🔒 Pending |
 
@@ -35,7 +35,7 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 
 **Deliverables:** notebook, PACE strategy document, executive summary, data quality log.
 
-### Course 2 — Get Started with Python
+### Course 2 — Go Beyond the Numbers: Translate Data into Insights
 **Automatidata project:** Python-based EDA using pandas and matplotlib. Cleaned the dataset, engineered initial features, produced visualisations showing fare distribution and outlier patterns, and documented findings for both technical and non-technical audiences.
 
 **Deliverables:** notebook, PACE strategy document, executive summary.
@@ -47,6 +47,11 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 
 ### Course 4 — Regression Analysis
 **Automatidata project:** built a multiple linear regression model to predict NYC taxi fare amounts before the ride begins. Engineered route-level features (`mean_distance`, `mean_duration` per pickup-dropoff pair) available at prediction time. Model achieves **R² = 0.87** and **MAE = $2.10** on the test set. Verified all four regression assumptions. Documented caveats around multicollinearity between predictors (0.87), the JFK flat-rate structural artifact, and mild data leakage from computing route-level means on the full dataset.
+
+**Deliverables:** notebook, PACE strategy document, executive summary.
+
+### Course 5 — The Nuts and Bolts of Machine Learning
+**Automatidata project:** built and compared Random Forest and XGBoost classifiers to predict whether a rider will be a generous tipper (≥20% tip). The originally proposed objective — predicting who *wouldn't* tip, for a driver-facing alert app — was rejected during planning on ethical grounds (it would function as a "riders to avoid" list) and reframed around identifying generous tippers instead. XGBoost was selected as champion (test F1 = 0.745, precision 0.694, recall 0.805), a result independently cross-checked against the official course exemplar's notebook and found consistent with — and slightly better than — its actual computed output. Key finding: `VendorID` emerged as the dominant predictive feature; a direct validation check confirmed this reflects a genuine ~40-point generosity gap between the two TLC payment-technology providers, most plausibly explained by differing in-cab tip-suggestion defaults rather than rider behavior itself — a caveat carried through to the final recommendations, alongside the model's credit-card-only scope and its tendency toward false positives over false negatives.
 
 **Deliverables:** notebook, PACE strategy document, executive summary.
 
@@ -81,10 +86,17 @@ google-advanced-data-analytics/
 │       ├── PACE-strategy-document.docx
 │       └── exec_summary_final.pptx
 │
-└── course-4-regression-analysis/
+├── course-4-regression-analysis/
+│   └── automatidata-project/
+│       ├── README.md
+│       ├── Activity_Course4_Automatidata_project_lab.ipynb
+│       ├── PACE-strategy-document.docx
+│       └── exec_summary_final.pptx
+│
+└── course-5-the-nuts-and-bolts-of-machine-learning/
     └── automatidata-project/
         ├── README.md
-        ├── Activity_Course4_Automatidata_project_lab.ipynb
+        ├── Activity_Course5_Automatidata_project_lab.ipynb
         ├── PACE-strategy-document.docx
         └── exec_summary_final.pptx
 ```
@@ -95,7 +107,7 @@ google-advanced-data-analytics/
 
 - **Python** — pandas, numpy
 - **Statistics** — scipy.stats, statsmodels
-- **Modelling** — scikit-learn (LinearRegression, StandardScaler, train_test_split, metrics)
+- **Modelling** — scikit-learn (LinearRegression, RandomForestClassifier, GridSearchCV, StandardScaler, train_test_split, metrics), XGBoost
 - **Visualisation** — matplotlib, seaborn
 - **Environment** — Jupyter Notebook
 
