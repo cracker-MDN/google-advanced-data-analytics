@@ -93,8 +93,8 @@ This project is part of the **Google Advanced Data Analytics Certificate** (Cour
 | File | Description |
 |------|-------------|
 | `Activity_Course2_Automatidata_project_lab.ipynb` | Jupyter notebook — EDA, data cleaning, and visualizations |
-| `Course2_PACE_strategy_document.docx` | PACE strategy document — reasoning and decisions at each project stage |
-| `course2_exec_summary.pptx` | Executive summary — EDA findings and outlier handling recommendations |
+| `PACE-strategy-document.docx` | PACE strategy document — reasoning and decisions at each project stage |
+| `exec_summary_final.pptx` | Executive summary — EDA findings and outlier handling recommendations |
 
 ---
 
