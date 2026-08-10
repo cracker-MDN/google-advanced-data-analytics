@@ -24,7 +24,7 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 | 4 | Regression Analysis | Multiple linear regression, feature engineering, model evaluation | ✅ Complete |
 | 5 | The Nuts and Bolts of Machine Learning | Classification, decision trees, random forests, XGBoost | ✅ Complete |
 | 6 | Google Advanced Data Analytics Capstone | Capstone project — employee attrition prediction (Salifort Motors) | ✅ Complete |
-| 7 | The Google Advanced Data Analytics Capstone | Final capstone deliverables | 🔒 Pending |
+| 7 | The Google Advanced Data Analytics Capstone | Final capstone deliverables | ✅ Complete |
 
 ---
 
