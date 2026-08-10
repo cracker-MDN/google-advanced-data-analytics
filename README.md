@@ -2,7 +2,7 @@
 
 Project work from the [Google Advanced Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-advanced-data-analytics), completed through Coursera.
 
-This repository documents each course's end-of-course project, all built around the same fictional consulting scenario — **Automatidata**, a data consulting firm engaged by the **New York City Taxi and Limousine Commission (NYC TLC)** to build a fare prediction model. The scenario runs across all seven courses, with each course adding a new analytical layer.
+This repository documents each course's end-of-course project. Courses 1–5 are built around a single fictional consulting scenario — **Automatidata**, a data consulting firm engaged by the **New York City Taxi and Limousine Commission (NYC TLC)** to build a fare prediction model — with each course adding a new analytical layer. Course 6, the program's capstone, shifts to an independent scenario: **Salifort Motors**, a fictional alternative-energy vehicle manufacturer, where the task is predicting and addressing employee turnover.
 
 Each project folder contains a Jupyter notebook, a PACE strategy document, an executive summary presentation, and a README explaining business context, methodology, results, and next steps.
 
@@ -23,7 +23,7 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 | 3 | The Power of Statistics | Hypothesis testing, A/B testing, confidence intervals, Welch's t-test | ✅ Complete |
 | 4 | Regression Analysis | Multiple linear regression, feature engineering, model evaluation | ✅ Complete |
 | 5 | The Nuts and Bolts of Machine Learning | Classification, decision trees, random forests, XGBoost | ✅ Complete |
-| 6 | Google Advanced Data Analytics Capstone | Capstone project | 🔒 Pending |
+| 6 | Google Advanced Data Analytics Capstone | Capstone project — employee attrition prediction (Salifort Motors) | ✅ Complete |
 | 7 | The Google Advanced Data Analytics Capstone | Final capstone deliverables | 🔒 Pending |
 
 ---
@@ -52,6 +52,11 @@ Every project follows the **PACE framework**: Plan, Analyze, Construct, Execute.
 
 ### Course 5 — The Nuts and Bolts of Machine Learning
 **Automatidata project:** built and compared Random Forest and XGBoost classifiers to predict whether a rider will be a generous tipper (≥20% tip). The originally proposed objective — predicting who *wouldn't* tip, for a driver-facing alert app — was rejected during planning on ethical grounds (it would function as a "riders to avoid" list) and reframed around identifying generous tippers instead. XGBoost was selected as champion (test F1 = 0.745, precision 0.694, recall 0.805), a result independently cross-checked against the official course exemplar's notebook and found consistent with — and slightly better than — its actual computed output. Key finding: `VendorID` emerged as the dominant predictive feature; a direct validation check confirmed this reflects a genuine ~40-point generosity gap between the two TLC payment-technology providers, most plausibly explained by differing in-cab tip-suggestion defaults rather than rider behavior itself — a caveat carried through to the final recommendations, alongside the model's credit-card-only scope and its tendency toward false positives over false negatives.
+
+**Deliverables:** notebook, PACE strategy document, executive summary.
+
+### Course 6 — Google Advanced Data Analytics Capstone
+**Salifort Motors project:** a shift away from the Automatidata/NYC TLC scenario to an independent capstone scenario — Salifort Motors, a fictional alternative-energy vehicle manufacturer facing high employee turnover. Built and compared Decision Tree, Random Forest, and XGBoost classifiers to predict which employees are likely to leave. After removing 3,008 exact-duplicate rows (~20% of the dataset, concentrated among employees who left — dropping them shifted the measured attrition rate from 23.8% to 16.6%), EDA revealed attrition splits into at least three distinct employee profiles rather than one population: underworked and disengaged, overworked and burned out, and a third group that was overworked but still satisfied, likely leaving for reasons outside the dataset. `number_project` and `time_spend_company` both showed non-linear, U-shaped relationships with attrition — a direct violation of the linearity assumption a regression approach would require, and the reason tree-based models were used instead. XGBoost was selected as the final model (test recall 0.908, precision 0.936, F1 0.922, AUC 0.972) over a Decision Tree with marginally higher raw recall, since the Decision Tree's cross-validated recall was also nearly twice as variable across folds — a stability-adjusted choice rather than a raw-metric one. `satisfaction_level` was deliberately excluded as a predictor due to its potential entanglement with the outcome (self-reported at the same time as the decision to leave).
 
 **Deliverables:** notebook, PACE strategy document, executive summary.
 
@@ -93,10 +98,17 @@ google-advanced-data-analytics/
 │       ├── PACE-strategy-document.docx
 │       └── exec_summary_final.pptx
 │
-└── course-5-the-nuts-and-bolts-of-machine-learning/
-    └── automatidata-project/
+├── course-5-the-nuts-and-bolts-of-machine-learning/
+│   └── automatidata-project/
+│       ├── README.md
+│       ├── Activity_Course5_Automatidata_project_lab.ipynb
+│       ├── PACE-strategy-document.docx
+│       └── exec_summary_final.pptx
+│
+└── course-6-capstone/
+    └── salifort-motors-project/
         ├── README.md
-        ├── Activity_Course5_Automatidata_project_lab.ipynb
+        ├── Activity_Course6_Salifort_Motors_project_lab.ipynb
         ├── PACE-strategy-document.docx
         └── exec_summary_final.pptx
 ```
@@ -107,10 +119,10 @@ google-advanced-data-analytics/
 
 - **Python** — pandas, numpy
 - **Statistics** — scipy.stats, statsmodels
-- **Modelling** — scikit-learn (LinearRegression, RandomForestClassifier, GridSearchCV, StandardScaler, train_test_split, metrics), XGBoost
+- **Modelling** — scikit-learn (LinearRegression, DecisionTreeClassifier, RandomForestClassifier, GridSearchCV, StandardScaler, train_test_split, metrics), XGBoost
 - **Visualisation** — matplotlib, seaborn
 - **Environment** — Jupyter Notebook
 
 ---
 
-*Note: the Automatidata scenario and NYC TLC dataset are provided by the Google Advanced Data Analytics Certificate for pedagogical purposes. Analysis and communication decisions are my own.*
+*Note: the Automatidata scenario and NYC TLC dataset, and the Salifort Motors capstone scenario, are provided by the Google Advanced Data Analytics Certificate for pedagogical purposes. Analysis and communication decisions are my own.*
